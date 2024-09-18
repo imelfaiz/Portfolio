@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio - Mechanics</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        .projects, .experiences, .school-activities {
+            display: flex;
+            flex-direction: column; /* Arrange items in a column */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            padding: 20px;
+        }
+
+        .project, .experience, .activity {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 20px 0; /* Adjust the spacing between elements */
+            width: 80%; /* Adjust the width as needed */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #052877;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #01144b;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        /* Styles for images */
+        .project img, .experience img, .activity img {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .slider-container {
+            position: relative;
+        }
+        .project img, .experience img, .activity img {
+            display: none; /* Hide all images */
+        }
+        .project img.active, .experience img.active, .activity img.active {
+            display: block; /* Show only the active image */
+        }
+        /* Navigation button styles */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .prev {
+            left: 10px; /* Space from the left */
+        }
+        .next {
+            right: 10px; /* Space from the right */
+        }
+        footer {
+            background-color:  #052877;
+            color: white; /* Corrected color */
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Imane EL FAIZ</h1>
+        <p>Élève ingénieur en génie mécanique à l'École Nationale Supérieure d'Arts et Métiers de Casablanca<br>à la recherche d'un stage PFE</p>
+    </header>
+
+    <nav>
+        <a href="#about">Profil</a>
+        <a href="#projects">Projets</a>
+        <a href="#experiences">Expériences Professionnelles</a>
+        <a href="#school-activities">Activités Scolaires</a>
+        <a href="#skills">Compétences</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h1>Profil</h1>
+        <p>Je suis actuellement en troisième
+            année génie mécanique à l'École
+            Nationale Supérieure d'Arts et Métiers de
+            Casablanca.
+            À la recherche d'une opportunité de
+            stage PFE qui me permettrait
+            d'approfondir mon expérience dans le
+            domaine mécanique, animée
+            par le désir de rester à la pointe des
+            avancées technologiques, je suis prête à
+            intégrer un environnement dynamique où
+            je pourrai mettre en pratique ma créativité
+            et ma compétence technique au service
+            de projets innovants.
+        </p>
+    </section>
+
+    <!-- Section Expériences Professionnelles -->
+    <section id="experiences">
+        <h1>Expériences Professionnelles</h1>
+        <div class="experiences">
+
+            <!-- Première expérience -->
+               <div class="experience">
+                <h2>Stage Projet de Fin D'année           <h3>Organisme d'acceuil :<a href="https://www.fam.ma/fr/">Fonderie Aciérie du Maroc<h3></a></h2>
+                <h3>Etude et processus de fabrication d'une volute de la pompe V300 de l'OCP.</h3>
+                <p> Lors de mon stage à la <a href="https://www.fam.ma/fr/">Fonderie Aciérie du Maroc</a>, j'ai réalisé l'étude et le dimensionnement d'une volute
+                     pour la pompe V300 de l'OCP. J'ai travaillé sur la modélisation de la pièce avec SolidWorks, ainsi que sur
+                      la conception du moule en bois et le dimensionnement du noyau.<br> Mon travail a également porté sur l'optimisation 
+                      du système de remplissage et du masselotage, tout en analysant les étapes de préparation de la coulée, de fusion,
+                       de moulage et de démoulage pour garantir la faisabilité du processus de fabrication.</p>
+                    <div class="slider-container">
+                        <button class="prev" onclick="changeImageForExperience(0, -1)">&#10094;</button>
+                        <img src="PG fam.png" class="active">
+                        <img src="16 fam.jpg">
+                        <img src="17 f.png">
+                        <img src="19f.png">
+                        <img src="18f.png">
+                        <button class="next" onclick="changeImageForExperience(0, 1)">&#10095;</button>
+                    </div>
+            </div>
+
+
+             <!-- deusième expérience -->
+            <div class="experience">
+                <h2>Stage d'application           <h3>Organisme d'acceuil :<a href="https://www.marsamaroc.co.ma/">Marsa Maroc<h3></a></h2>
+                <h3>Sujet: Étude de l'axe de pivot central d'une chargeuse</h3>
+                <p> Ce stage m'a permis de développer mon esprit d'analyse en identifiant les causes probables des problèmes rencontrés et 
+                    en cherchant des solutions adaptées. En déployant mes connaissances en mécanique, j'ai réalisé la modélisation des charges 
+                    et les calculs des forces appliquées sur les roulements du système. J'ai également évalué la conception initiale du constructeur sur CATIA V5
+                     et proposé des améliorations pour prévenir les problèmes futurs. Cette expérience a renforcé ma capacité à diagnostiquer les
+                      défaillances, à comprendre les exigences de conception, et à contribuer de manière significative à l'optimisation des systèmes
+                       mécaniques.</p>
+                <div class="slider-container">
+                    <button class="prev" onclick="changeImageForExperience(1, -1)">&#10094;</button>
+                    <img src="7.png" class="active">
+                    <img src="8.png">
+                    <img src="9.png">
+                    <img src="10.png">
+                    <img src="11.png">
+                    <button class="next" onclick="changeImageForExperience(1, 1)">&#10095;</button>
+                </div>
+            </div>
+
+         
+
+           
+            <div class="experience">
+
+                
+                <h2>Stage d'initiation  
+                <h3>Organisme d'acceuil :<a href="https://www.royalairmaroc.com/web/corporate/aerotechnic-industries">Royal Air Maroc</a><h3></h2>
+                
+        
+                <p>Ma première expérience dans le monde industriel s'est déroulée lors de mon stage
+                     d'initiation chez Royal Air Maroc. J'ai assisté aux opérations de maintenance 
+                     des aéronefs, notamment le remplacement des moteurs sur le Boeing 737 Max 8 et
+                      l'inspection des structures des avions.<br> J'ai également observé le travail 
+                      effectué dans les ateliers, notamment ceux dédiés aux batteries et aux systèmes roue-frein,
+                       et découvert diverses activités dans les départements tels que l'étude des moteurs, le
+                        planning et le contrôle, ainsi que la gestion de la navigabilité.</p>
+            
+                 <div class="slider-container">
+                    <button class="prev" onclick="changeImageForExperience(2, -1)">&#10094;</button>
+                    <img src="PG RAM.jpg" class="active">
+                    <img src="RAM 2.jpg">
+                    <img src="ram 4.png">
+                    <button class="next" onclick="changeImageForExperience(2, 1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects">
+        <h1>Projets</h1>
+        <div class="projects">
+
+            <!-- Projet 1 -->
+            <div class="project">
+                <h3>Conception et simulation CFD d'un sous-marin</h3>
+                <p>- Étude théorique statique et dynamique du sous-marin.<br>
+                    - Conception sur le logiciel CATIA V5.<br>
+                    - Simulation numérique sur ANSYS.</p>
+                <div class="slider-container">
+                    <button class="prev" onclick="changeImageForProject(0, -1)">&#10094;</button>
+                    <img src="1.png" class="active">
+                    <img src="2.png">
+                    <img src="3.png">
+                    <img src="4.png">
+                    <img src="5.png">
+                    <button class="next" onclick="changeImageForProject(0, 1)">&#10095;</button>
+                </div>
+            </div><br><br>
+
+            <!-- Projet 3 -->
+            <div class="project">
+                <h3>Conception d'un moule pour injection plastique</h3>
+                <p>- Dimensionnement de la pièce.<br>- Conception de la pièce et du moule sur CATIA V5.</p>
+                <div class="slider-container">
+                    <button class="prev" onclick="changeImageForProject(1, -1)">&#10094;</button>
+                    <img src="12.png" class="active">
+                    <img src="13.png">
+                    <img src="14.png">
+                    <button class="next" onclick="changeImageForProject(1, 1)">&#10095;</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+       <!-- Section Activités Scolaires -->
+       <section id="school-activities">
+        <h1>Activités Scolaires</h1>
+        <div class="school-activities">
+
+            <!-- Première activité scolaire -->
+            <div class="activity">
+                <h3>Club ART & MÉTIER Mecatronics</h3>
+                <p>En tant que membre du club ART ET MÉTIER MÉCATRONICS, 
+                    mon engagement et ma capacité à apprendre rapidement m'ont permis,
+                     après quelques mois d'activité, de devenir membre du comité projet.<br>
+                      Dans ce rôle, j'ai assisté et orienté les groupes de projet dans la réalisation de leurs initiatives.
+                       J'ai contribué en animant des séances de brainstorming et en les accompagnant
+                        tout au long du processus de développement de leurs projets, facilitant ainsi leur succès.</p>
+            </div>
+
+            <!-- Deuxième activité scolaire -->
+            <div class="activity">
+                <h3>Organisation de la Journée d'acquisition </h3>
+                <p>Dans le cadre de la Journée d'Acquisition, un événement 
+                    national rassemblant des équipes de toutes les écoles du royaume pour présenter leurs projets,
+                     j'ai occupé un rôle clé en tant que membre du comité événementiel. <br>Mes responsabilités comprenaient
+                      l'organisation, la gestion et la coordination de l'événement. J'ai veillé à la bonne exécution des tâches 
+                      et assuré le bon déroulement de l'événement, contribuant ainsi à son succès global.
+
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills">
+        <h1>Compétences</h1>
+        <div class="skills">
+            <div class="skill">
+                <h3>Logiciels :</h3>
+                <p>Design: Catia V5 - Solidworks.<br>
+                    Simulation : Abaqus - Ansys.<br>
+                    Programming: Python, Matlab, R, C.</p>
+            </div>
+            <div class="skill">
+                <h3>Fabrication Mécanique:</h3>
+                <p>Expérience pratique avec des outils, des matériaux et des procédés tels que le soudage, l'impression 3D, l'usinage CNC FAO.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Section Contact -->
+    <section id="contact">
+        <h1>Contact</h1>
+        <ul>
+            <li>Email: imaneelfaiz02@gmail.com</li>
+            <li>Phone: +212 694 60 00 17</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/imane-el-faiz-993a6320b/">linkedin.com/ImaneELFAIZ</a></li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Student Portfolio - Imane EL FAIZ</p>
+    </footer>
+
+    <script>
+        // JavaScript for project images
+        let currentProjectImages = [0, 0]; // Index for project images
+        let currentExperienceImages = [0, 0, 0]; // Index for experience images
+
+        function changeImageForProject(projectIndex, direction) {
+            let project = document.querySelectorAll('.project')[projectIndex];
+            let images = project.querySelectorAll('img');
+            images[currentProjectImages[projectIndex]].classList.remove('active');
+            currentProjectImages[projectIndex] = (currentProjectImages[projectIndex] + direction + images.length) % images.length;
+            images[currentProjectImages[projectIndex]].classList.add('active');
+        }
+
+        function changeImageForExperience(experienceIndex, direction) {
+            let experience = document.querySelectorAll('.experience')[experienceIndex];
+            let images = experience.querySelectorAll('img');
+            images[currentExperienceImages[experienceIndex]].classList.remove('active');
+            currentExperienceImages[experienceIndex] = (currentExperienceImages[experienceIndex] + direction + images.length) % images.length;
+            images[currentExperienceImages[experienceIndex]].classList.add('active');
+        }
+    </script>
+</body>
+</html>
